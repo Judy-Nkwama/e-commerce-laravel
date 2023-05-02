@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layout/layout')
 
 @section('content')
     @if ($product != null)
