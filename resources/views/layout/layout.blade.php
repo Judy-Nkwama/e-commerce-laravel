@@ -6,15 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Afrikanın Geneksel kıyafet Satış e-Mağaza ">
     <meta name="author" content="Judy Nkwama">
-    <title>Afrika'dan Giyim</title>
-
+    
+    {{-- styles --}}
     <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/carousel/">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-    {{-- <script src="{{ asset('js/app.js') }}"></script>  --}}
-
+    
     <style>
         /* GLOBAL STYLES
 
@@ -158,8 +155,8 @@
         }
     </style>
 
-    <!-- Custom styles for this template -->
-    {{-- <link href="carousel.css" rel="stylesheet"> --}}
+    {{-- title --}}
+    <title>Afrika'dan Giyim</title>
 </head>
 
 <body>
@@ -194,168 +191,20 @@
     </header>
 
     <main>
-
-        <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"
-                    aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-            </div>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-
-                    <img src="{{ asset('images/sli1.png') }}" class="img-fluid w-100 h-100 object-fit-cover " alt="slide1" />
-
-                    <div class="container">
-                        <div class="carousel-caption text-start">
-                            <h1>Example headline.</h1>
-                            <p>Some representative placeholder content for the first slide of the carousel.</p>
-                            <p><a class="btn btn-lg btn-primary" href="#">Sign up today</a></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    
-                    <img src="{{ asset('images/sli3.png') }}" class="img-fluid w-100 h-100 object-fit-cover " alt="slide1" />
-
-                    <div class="container">
-                        <div class="carousel-caption">
-                            <h1>Another example headline.</h1>
-                            <p>Some representative placeholder content for the second slide of the carousel.</p>
-                            <p><a class="btn btn-lg btn-primary" href="#">Learn more</a></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="{{ asset('images/sli2.png') }}" class="img-fluid w-100 h-100 object-fit-cover " alt="slide1" />
-
-                    <div class="container">
-                        <div class="carousel-caption text-end">
-                            <h1>One more for good measure.</h1>
-                            <p>Some representative placeholder content for the third slide of this carousel.</p>
-                            <p><a class="btn btn-lg btn-primary" href="#">Browse gallery</a></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-        </div>
-
-        <div class="container marketing">
-
-            <div class="row">
-                <div class="col-lg-4">
-                    <svg class="bd-placeholder-img rounded-circle" width="140" height="140"
-                        xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140"
-                        preserveAspectRatio="xMidYMid slice" focusable="false">
-                        <title>Placeholder</title>
-                        <rect width="100%" height="100%" fill="#777" /><text x="50%" y="50%"
-                            fill="#777" dy=".3em">140x140</text>
-                    </svg>
-
-                    <h2 class="fw-normal">Heading</h2>
-                    <p>Some representative placeholder content for the three columns of text below the carousel. This is
-                        the first column.</p>
-                    <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
-                </div><!-- /.col-lg-4 -->
-                <div class="col-lg-4">
-                    <svg class="bd-placeholder-img rounded-circle" width="140" height="140"
-                        xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140"
-                        preserveAspectRatio="xMidYMid slice" focusable="false">
-                        <title>Placeholder</title>
-                        <rect width="100%" height="100%" fill="#777" /><text x="50%" y="50%"
-                            fill="#777" dy=".3em">140x140</text>
-                    </svg>
-
-                    <h2 class="fw-normal">Heading</h2>
-                    <p>Another exciting bit of representative placeholder content. This time, we've moved on to the
-                        second column.</p>
-                    <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
-                </div><!-- /.col-lg-4 -->
-                <div class="col-lg-4">
-                    <svg class="bd-placeholder-img rounded-circle" width="140" height="140"
-                        xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140"
-                        preserveAspectRatio="xMidYMid slice" focusable="false">
-                        <title>Placeholder</title>
-                        <rect width="100%" height="100%" fill="#777" /><text x="50%" y="50%"
-                            fill="#777" dy=".3em">140x140</text>
-                    </svg>
-
-                    <h2 class="fw-normal">Heading</h2>
-                    <p>And lastly this, the third column of representative placeholder content.</p>
-                    <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
-                </div><!-- /.col-lg-4 -->
-            </div>
-
-
-            @yield('content')
-
-
-            <hr class="featurette-divider">
-
-            <div class="row featurette">
-                <div class="col-md-7">
-                    <h2 class="featurette-heading fw-normal lh-1"> Afrika Modasının Sihirli Dünyasını Keşfedin.</h2>
-                    <p class="lead">Afrika modası koleksiyonumuzla renkli, canlı ve kültür dolu bir dünyaya adım atın. Kıyafetlerimiz, kıtanın zengin mirasını ve çeşitliliğini kutlar ve Afrika'nın ruhunu gardırobunuza taşır. Karmaşık desenlerden cesur baskılara, kıyafetlerimiz, halkının dayanıklılığı, yaratıcılığı ve güzelliğini yansıtan bir sanat eseridir. Özel bir etkinlik için bir parça veya stil ve özgüven aşılayan günlük bir kıyafet arıyorsanız, koleksiyonumuz herkes için bir şeyler sunar.</p>
-                </div>
-                <div class="col-md-5">
-                    <img class="img-fluid object-fit-cover" style="width: 500px; height: 500px;" src="{{ asset('images/fea1.png') }}" />
-                </div>
-            </div>
-
-            <hr class="featurette-divider">
-
-            <div class="row featurette">
-                <div class="col-md-7 order-md-2">
-                    <h2 class="featurette-heading fw-normal lh-1"> İçsel Özgüveninizi Ortaya Çıkarın.</h2>
-                    <p class="lead">Afrika modası yalnızca bir giyim tarzı değil, aynı zamanda özgüven ve stilin bir ifadesidir. Tasarımlarımız, Afrika kültürünün çeşitliliğini ve güzelliğini vurgulayarak halkının dayanıklılığını ve yaratıcılığını kutlar. Kıyafetlerimiz, özgün stilinizi ifade etmenize ve içsel özgüveninizi ortaya çıkarmanıza yardımcı olmak için tasarlanmıştır. Canlı renklerden akan kumaşlara kadar koleksiyonumuz zarafet, şıklık ve güç yansıtır.</p>
-                </div>
-                <div class="col-md-5 order-md-1">
-                    <img class="img-fluid object-fit-cover" style="width: 500px; height: 500px;" src="{{ asset('images/fea2.png') }}" />
-                </div>
-            </div>
-
-            <hr class="featurette-divider">
-
-            <div class="row featurette">
-                <div class="col-md-7">
-                    <h2 class="featurette-heading fw-normal lh-1"> Afrika Modası ile Çeşitliliği Kutlayın.</h2>
-                    <p class="lead"> Çeşitlilik, Afrika modasının kalbidir. Koleksiyonumuz, kıtanın en yetenekli tasarımcıları ve zanaatkarlarından gelen kıyafetleri içerir, böylece her parça özgün ve karakter doludur. Renkli balmumu baskılardan karmaşık boncuk işlemelerine kadar kıyafetlerimiz, Afrika kültürünün çeşitliliğini ve güzelliğini kutlar.</p>
-                </div>
-                <div class="col-md-5">
-                    <img class="img-fluid object-fit-cover" style="width: 500px; height: 500px;" src="{{ asset('images/fea3.png') }}" />
-                </div>
-            </div>
-
-            <hr class="featurette-divider">
-
-            <!-- /END THE FEATURETTES -->
-
-        </div>
-
-
-        <!-- FOOTER -->
-        <footer class="container">
-            <p class="float-end"><a href="#">Back to top</a></p>
-            <p>&copy; 2017–2022 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a
-                    href="#">Terms</a></p>
-        </footer>
+        @yield('content')
     </main>
 
+
+    <!-- FOOTER -->
+    <footer class="container">
+        <p class="float-end"><a href="#">Back to top</a></p>
+        <p>&copy; 2017–2022 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a
+                href="#">Terms</a></p>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
     </script>
-
-
 </body>
 
 </html>
