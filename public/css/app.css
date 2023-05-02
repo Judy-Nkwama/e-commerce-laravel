@@ -1,0 +1,11 @@
+.object-fit-cover {
+    object-fit: cover;
+}
+
+.card-img-wrapper {
+    height: 225px;
+}
+
+.card-description {
+    height: 80px;
+}
