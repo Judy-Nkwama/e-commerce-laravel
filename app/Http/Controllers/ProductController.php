@@ -10,7 +10,7 @@ class ProductController extends Controller
     
     public static function index(){
         return view("products.index", [
-            "products" => Products::all()
+            "products" => Products::latest()->filter(request(["tag"]))->get()
         ]);
     }
 

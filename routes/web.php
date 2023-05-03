@@ -21,7 +21,11 @@ Route::get('/', function () {
 });
 
 // all products list is home page and products list page at the same time
-Route::get("/", [ProductController::class, "index"]);
+Route::get("/", function () {
+    return view("home", [
+        "products" => Products::latest()->get()
+    ]);
+});
 Route::get("/products", [ProductController::class, "index"]);
 
 //One product 

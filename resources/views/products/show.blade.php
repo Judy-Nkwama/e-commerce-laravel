@@ -10,7 +10,7 @@
                     <h2>400tl ${{-- $product->price --}}</h2>
                     <p>{{ $product->description }}</p>
 
-                    <x-tags class="my-5" tagStr="çocuk, kadın, aksesuar" />
+                    <x-tags class="my-5" tagStr="{{ $product->tags_string }}" />
 
                     <form action="{{-- route('cart.add', $product->id) --}}" method="POST">
                         @csrf

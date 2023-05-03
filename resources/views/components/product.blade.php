@@ -10,10 +10,7 @@
             <h5>{{ $product->title }}</h5>
             <p class="card-text fs-6 card-description overflow-hidden border">{{ $product->description }}</p>
             <div class="d-flex justify-content-between align-items-center">
-                <div>
-                    <button type="button" class="btn btn-sm btn-outline-secondary rounded-pill">Kadın</button>
-                    <button type="button" class="btn btn-sm btn-outline-secondary rounded-pill">Çocuk</button>
-                </div>
+                <x-tags class="" tagStr="{{ $product->tags_string }}" />
                 <h3 class="text-muted">507.99tl</h3>
             </div>
         </div>

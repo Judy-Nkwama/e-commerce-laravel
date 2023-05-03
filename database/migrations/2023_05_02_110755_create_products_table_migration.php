@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string("title");
             $table->longText("description");
             $table->string("bg_image_link");
+            $table->string("tags_string");
             $table->date("updated_at")->default(now());
             $table->date("created_at")->default(now());
         });
