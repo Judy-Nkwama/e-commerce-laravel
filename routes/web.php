@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProductController;
 use App\Models\Products;
 use Illuminate\Support\Facades\Route;
 
@@ -19,17 +20,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// all products
-Route::get("/products", function () {
-    return view("products", [
-        "header" => "Products List",
-        "products" => Products::all()
-    ]);
-});
+// all products list is home page and products list page at the same time
+Route::get("/", [ProductController::class, "index"]);
+Route::get("/products", [ProductController::class, "index"]);
 
 //One product
-Route::get("/products/{id}", function ($id) {
-    return view("product", [
-        "product" => Products::find($id)
-    ]);
-});
+Route::get("/products/{id}", [ProductController::class, "show"]);
