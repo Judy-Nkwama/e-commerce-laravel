@@ -9,13 +9,13 @@ class ProductController extends Controller
 {
     
     public static function index(){
-        return view("products", [
+        return view("products.index", [
             "products" => Products::all()
         ]);
     }
 
     public static function show($id){
-        return view("product", [
+        return view("products.show", [
             "product" => Products::find($id)
         ]);
     }

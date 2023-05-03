@@ -1,6 +1,4 @@
-@extends('layout/layout')
-
-@section('content')
+<x-layout>
     @if ($product != null)
         <div class="container mt-5">
             <div class="row">
@@ -19,7 +17,8 @@
                         <div class="d-flex">
                             <div class="btn-group me-md-4" role="group" aria-label="Basic outlined">
                                 <button type="button" class="btn btn-outline-primary px-3">-</button>
-                                <div class="d-flex align-items-center border border-primary w-100 px-4"><span>1</span></div>
+                                <div class="d-flex align-items-center border border-primary w-100 px-4"><span>1</span>
+                                </div>
                                 <button type="button" class="btn btn-outline-primary px-3">+</button>
                             </div>
                             <button type="submit" class="btn btn-primary flex-grow-1">Add to Cart</button>
@@ -33,5 +32,4 @@
     @endif
 
     @include('partials._categories')
-
-@endsection
+</x-layout>
