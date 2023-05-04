@@ -6,12 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Afrikanın Geneksel kıyafet Satış e-Mağaza ">
     <meta name="author" content="Judy Nkwama">
-    
+
     {{-- styles --}}
     <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/carousel/">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-    
+
     <style>
         /* GLOBAL STYLES
 
@@ -22,11 +23,6 @@
             padding-bottom: 3rem;
             color: #5a5a5a;
         }
-
-
-        /* CUSTOMIZE THE CAROUSEL */
-
-
         /* Carousel base class */
         .carousel {
             margin-bottom: 4rem;
@@ -43,10 +39,6 @@
             height: 32rem;
         }
 
-
-        /* MARKETING CONTENT */
-
-
         /* Center align the text within the three columns below the carousel */
         .marketing .col-lg-4 {
             margin-bottom: 1.5rem;
@@ -58,12 +50,6 @@
             margin-right: .75rem;
             margin-left: .75rem;
         }
-
-        /* rtl:end:ignore */
-
-
-        /* Featurettes */
-
 
         .featurette-divider {
             margin: 5rem 0;
@@ -101,6 +87,42 @@
             }
         }
 
+        .b-example-divider {
+            height: 3rem;
+            background-color: rgba(0, 0, 0, .1);
+            border: solid rgba(0, 0, 0, .15);
+            border-width: 1px 0;
+            box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+        }
+
+        .b-example-vr {
+            flex-shrink: 0;
+            width: 1.5rem;
+            height: 100vh;
+        }
+
+        .bi {
+            vertical-align: -.125em;
+            fill: currentColor;
+        }
+
+        .nav-scroller {
+            position: relative;
+            z-index: 2;
+            height: 2.75rem;
+            overflow-y: hidden;
+        }
+
+        .nav-scroller .nav {
+            display: flex;
+            flex-wrap: nowrap;
+            padding-bottom: 1rem;
+            margin-top: -1px;
+            overflow-x: auto;
+            text-align: center;
+            white-space: nowrap;
+            -webkit-overflow-scrolling: touch;
+        }
 
 
         .bd-placeholder-img {
@@ -123,17 +145,6 @@
             border: solid rgba(0, 0, 0, .15);
             border-width: 1px 0;
             box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
-        }
-
-        .b-example-vr {
-            flex-shrink: 0;
-            width: 1.5rem;
-            height: 100vh;
-        }
-
-        .bi {
-            vertical-align: -.125em;
-            fill: currentColor;
         }
 
         .nav-scroller {
@@ -193,15 +204,15 @@
     @include('partials._search-bar')
 
     <main>
-        {{$slot}}
+        {{ $slot }}
     </main>
 
 
     <!-- FOOTER -->
     <footer class="container">
         <p class="float-end"><a href="#">Back to top</a></p>
-        <p>&copy; 2017–2022 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a
-                href="#">Terms</a></p>
+        <p>&copy; 2017–2022 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a>
+        </p>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"

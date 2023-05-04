@@ -32,7 +32,6 @@ return new class extends Migration
             $table->unsignedBigInteger('user_id');
             $table->string('address');
             $table->string('city');
-            $table->string('state');
             $table->string('zip');
             $table->timestamps();
 

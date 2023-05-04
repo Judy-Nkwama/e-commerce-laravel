@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\UserController;
 use App\Models\Products;
 use Illuminate\Support\Facades\Route;
 
@@ -15,6 +16,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+//User -----------------------------------
+
 // all home page
 Route::get('/', function () {
     return view('welcome');
@@ -26,7 +30,23 @@ Route::get("/", function () {
         "products" => Products::latest()->get()
     ]);
 });
+
 Route::get("/products", [ProductController::class, "index"]);
 
 //One product 
 Route::get("/products/{id}", [ProductController::class, "show"]);
+
+Route::get("/checkout", function () {
+    return view("checkout");
+});
+
+Route::get("/signup", [UserController::class, "index"]);
+Route::post("/create-user", [UserController::class, "store"]);
+
+
+
+//Admin ------------------------
+
+Route::get("/dashboard", function () {
+    return view("dashboard");
+});

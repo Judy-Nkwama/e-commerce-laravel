@@ -3,10 +3,13 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+use App\Models\Orders;
+use App\Models\Products;
+use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
-use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
 {
@@ -17,10 +20,10 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
+    
+
     protected $fillable = [
-        'name',
-        'email',
-        'password',
+        "firstname", "lastname", "email", "password", "address", "city", "zip"
     ];
 
     /**
@@ -41,4 +44,21 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function orders()
+    {
+        return $this->hasMany(Orders::class);
+    }
 }
+
+// class Admin extends Model
+// {
+//     protected $fillable = [
+//         'name', 'email', 'password'
+//     ];
+
+//     public function products()
+//     {
+//         return $this->hasMany(Products::class);
+//     }
+// }

@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Orders;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Products extends Model
 {
@@ -20,5 +21,10 @@ class Products extends Model
                 ->orWhere("description", "like", "%" . request("s") . "%")
                 ->orWhere("tags_string", "like", "%" . request("s") . "%");
         }
+    }
+
+    public function orders()
+    {
+        return $this->belongsToMany(Orders::class);
     }
 }
