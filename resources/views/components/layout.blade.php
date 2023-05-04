@@ -190,6 +190,8 @@
         </nav>
     </header>
 
+    @include('partials._search-bar')
+
     <main>
         {{$slot}}
     </main>

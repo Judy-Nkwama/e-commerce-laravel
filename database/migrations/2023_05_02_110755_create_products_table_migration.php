@@ -17,8 +17,13 @@ return new class extends Migration
             $table->longText("description");
             $table->string("bg_image_link");
             $table->string("tags_string");
+            $table->decimal('price', 10, 2);
+            $table->integer('quantity');
+            $table->boolean('is_active')->default(true);
+
             $table->date("updated_at")->default(now());
             $table->date("created_at")->default(now());
+
         });
     }
 

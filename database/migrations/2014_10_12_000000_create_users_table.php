@@ -13,13 +13,32 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('firstname');
+            $table->string('lastname');
             $table->string('email')->unique();
+
+            $table->boolean('is_admin')->default(false);
+            $table->boolean('is_active')->default(true);
+
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
         });
+
+
+        Schema::create('user_addresses', function (Blueprint $table) {
+            $table->id();
+            $table->unsignedBigInteger('user_id');
+            $table->string('address');
+            $table->string('city');
+            $table->string('state');
+            $table->string('zip');
+            $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+        });
+
     }
 
     /**
@@ -27,6 +46,12 @@ return new class extends Migration
      */
     public function down(): void
     {
+        // Drop user_addresses table
+        Schema::dropIfExists('user_addresses');
+    
+        //
         Schema::dropIfExists('users');
+
+        
     }
 };
