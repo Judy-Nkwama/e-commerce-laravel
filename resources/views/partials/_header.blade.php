@@ -31,13 +31,13 @@
     </symbol>
 </svg>
 
-<header class="overflow-hidden">
+<header class="">
     <div class="px-3 py-2 text-bg-danger">
         <div class="container">
             <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
                 <a href="/"
                     class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
-                    <div class="border border-white border-2 px-3 py-1">
+                    <div class="border border-white rounded border-2 px-3 py-1">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
                             class="bi bi-bag" viewBox="0 0 16 16">
                             <path
@@ -49,42 +49,51 @@
 
                 <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
                     <li>
-                        <a href="#" class="nav-link text-secondary">
+                        <a href="#" class="nav-link text-white">
                             <svg class="bi d-block mx-auto mb-1" width="24" height="24">
                                 <use xlink:href="#home" />
                             </svg>
-                            Home
+                            Ana Sayfa
                         </a>
                     </li>
-                    <li>
-                        <a href="#" class="nav-link text-white">
-                            <svg class="bi d-block mx-auto mb-1" width="24" height="24">
-                                <use xlink:href="#speedometer2" />
-                            </svg>
-                            Dashboard
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="nav-link text-white">
-                            <svg class="bi d-block mx-auto mb-1" width="24" height="24">
-                                <use xlink:href="#table" />
-                            </svg>
-                            Orders
-                        </a>
-                    </li>
+
+                    @auth
+                        @if (auth()->user()->is_admin)
+                            <li>
+                                <a href="#" class="nav-link text-white">
+                                    <svg class="bi d-block mx-auto mb-1" width="24" height="24">
+                                        <use xlink:href="#speedometer2" />
+                                    </svg>
+                                    K. Paneli
+                                </a>
+                            </li>
+                        @endif
+                    @endauth
+
+                    @auth
+                        <li>
+                            <a href="#" class="nav-link text-white">
+                                <svg class="bi d-block mx-auto mb-1" width="24" height="24">
+                                    <use xlink:href="#table" />
+                                </svg>
+                                Şiparişlerim
+                            </a>
+                        </li>
+                    @endauth
+
                     <li>
                         <a href="#" class="nav-link text-white">
                             <svg class="bi d-block mx-auto mb-1" width="24" height="24">
                                 <use xlink:href="#grid" />
                             </svg>
-                            Products
+                            Ürünler
                         </a>
                     </li>
 
                     <li>
                         <a href="#" class="nav-link text-white">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="bi d-block mx-auto mb-1" width="24" height="24" fill="currentColor"
-                                class="bi bi-cart" viewBox="0 0 16 16">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="bi d-block mx-auto mb-1" width="24"
+                                height="24" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
                                 <path
                                     d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
                             </svg>
@@ -92,26 +101,60 @@
                         </a>
                     </li>
 
-                    <li>
-                        <a href="#" class="nav-link text-white">
-                            <svg class="bi d-block mx-auto mb-1" width="24" height="24">
-                                <use xlink:href="#people-circle" />
-                            </svg>
-                            Customers
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="nav-link text-white">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="bi d-block mx-auto mb-1" width="24"
-                                height="24" fill="currentColor" class="bi bi-box-arrow-in-right" viewBox="0 0 16 16">
-                                <path fill-rule="evenodd"
-                                    d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0v-2z" />
-                                <path fill-rule="evenodd"
-                                    d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z" />
-                            </svg>
-                            <span>Üye girişi</span>
-                        </a>
-                    </li>
+                    @auth
+                        <li class="p-2">
+                            <a href="#" class="text-white">
+                                <div class="dropdown">
+                                    <a href="#" class="d-flex align-items-center text-white text-decoration-none"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        @if (auth()->user()->profile_photo_path)
+                                            <img src="{{ auth()->user()->profile_photo_path }}" alt=""
+                                                width="32" height="32" class="rounded-circle">
+                                        @else
+                                            <svg class="bi d-block mx-auto mb-1" width="24" height="24">
+                                                <use xlink:href="#people-circle" />
+                                            </svg>
+                                        @endif
+                                    </a>
+                                    <ul class="dropdown-menu text-small shadow">
+                                        
+                                        <li><a class="dropdown-item" href="#">Profilim</a></li>
+                                        <li><a class="dropdown-item" href="#">Ayarlamalar</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li>
+                                            <span class="dropdown-item" href="#">
+                                                {{ auth()->user()->firstname }} {{ auth()->user()->lastname }}
+                                                <br> <span class="text-muted">{{ auth()->user()->email }}</span>
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+
+                                        <li><a class="dropdown-item" href="#">Cıkış</a></li>
+                                    </ul>
+                                </div>
+
+                                <span>{{ auth()->user()->firstname }}</span>
+                            </a>
+                        </li>
+                    @else
+                        <li>
+                            <a href="#" class="nav-link text-white">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="bi d-block mx-auto mb-1" width="24"
+                                    height="24" fill="currentColor" class="bi bi-box-arrow-in-right"
+                                    viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd"
+                                        d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0v-2z" />
+                                    <path fill-rule="evenodd"
+                                        d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z" />
+                                </svg>
+                                <span>Üye girişi</span>
+                            </a>
+                        </li>
+                    @endauth
                 </ul>
             </div>
         </div>

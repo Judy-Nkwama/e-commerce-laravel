@@ -13,8 +13,10 @@
                 <p>Hiç bir ürün bulunmamakta</p>
             @endif
         </div>
+
+        @include('partials._feacher')
+
     </div>
 
-    @include('partials._feacher')
 
 </x-layout>

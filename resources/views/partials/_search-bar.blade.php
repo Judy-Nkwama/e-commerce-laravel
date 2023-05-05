@@ -4,7 +4,7 @@
             <input type="search" class="form-control text-secondary border-0 ps-4 rounded-0 rounded-left py-2" placeholder="ne aramıştınız?"
                 id="searc-input" name="s">
         </div>
-        <button type="submit" class="btn btn-white rounded-0 text-danger">
+        <button type="submit" class="btn btn-white rounded-0 text-danger pe-4">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                 class="bi bi-search" viewBox="0 0 16 16">
                 <path
