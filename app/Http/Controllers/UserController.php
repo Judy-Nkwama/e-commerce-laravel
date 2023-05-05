@@ -9,10 +9,12 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
+    // Show the signup form
     public static function index(){
         return view("signup");
     }
 
+    // yeni kullanınıcı oluşturma
     public static function store(Request $request){
 
         $userData = $request->validate([
@@ -40,6 +42,46 @@ class UserController extends Controller
 
         return redirect("/");
         
+    }
+
+    // Show the login form
+    public static function login(){
+        return view("login");
+    }
+
+    // Show the login form
+    public static function auth(Request $request){
+        
+        $userData = $request->validate([
+            "email" => "required|email",
+            "password" => "required"
+        ]);
+
+        // if auth passes
+        if(auth()->attempt($userData)){
+            $request->session()->regenerate();
+
+            if(auth()->user()->is_admin){
+                return redirect("/dashboard");
+            }
+
+            return redirect("/");
+        }
+
+        // if auth fails
+        return back()->withErrors(["auth_failure" => "E-posta veya şifre hatalı!"]);
+    }
+
+    // çıkış işlemi
+    public static function logout(Request $request){
+        
+        auth()->logout();
+
+        // mevcut oturum bilgileri yenilleme  
+        $request->session()->invalidate();
+        $request->session()->regenerateToken(); 
+
+        return redirect("/");
     }
 
 }

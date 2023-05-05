@@ -6,6 +6,14 @@
     height: 150px;
 }
 
+.fs-7{
+    font-size: 12px;
+}
+
 .card-description {
-    height: 50px;
+    height: 33px;
+}
+
+.card-title {
+    height: 40px;
 }

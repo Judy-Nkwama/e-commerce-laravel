@@ -19,7 +19,6 @@
             bottom: 3rem;
             z-index: 10;
         }
-
         /* Declare heights because of positioning of img element */
         .carousel-item {
             height: 21rem;

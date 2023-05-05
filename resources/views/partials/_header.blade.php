@@ -53,18 +53,18 @@
                             <svg class="bi d-block mx-auto mb-1" width="24" height="24">
                                 <use xlink:href="#home" />
                             </svg>
-                            Ana Sayfa
+                            <span>Ana Sayfa</span>
                         </a>
                     </li>
 
                     @auth
                         @if (auth()->user()->is_admin)
                             <li>
-                                <a href="#" class="nav-link text-white">
+                                <a href="/dashboard" class="nav-link text-white">
                                     <svg class="bi d-block mx-auto mb-1" width="24" height="24">
                                         <use xlink:href="#speedometer2" />
                                     </svg>
-                                    K. Paneli
+                                    <span>K. Paneli</span>
                                 </a>
                             </li>
                         @endif
@@ -117,7 +117,7 @@
                                         @endif
                                     </a>
                                     <ul class="dropdown-menu text-small shadow">
-                                        
+
                                         <li><a class="dropdown-item" href="#">Profilim</a></li>
                                         <li><a class="dropdown-item" href="#">Ayarlamalar</a></li>
                                         <li>
@@ -133,7 +133,22 @@
                                             <hr class="dropdown-divider">
                                         </li>
 
-                                        <li><a class="dropdown-item" href="#">Cıkış</a></li>
+                                        <li>
+                                            <form method="POST" action="/logout">
+                                                @csrf
+                                                <button class="dropdown-item" type="submit">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                        fill="currentColor" class="bi bi-box-arrow-left"
+                                                        viewBox="0 0 16 16">
+                                                        <path fill-rule="evenodd"
+                                                            d="M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 5 12.5v-2a.5.5 0 0 1 1 0v2z" />
+                                                        <path fill-rule="evenodd"
+                                                            d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3z" />
+                                                    </svg>
+                                                    <span class="ms-2">Cıkış</span>
+                                                </button>
+                                            </form>
+                                        </li>
                                     </ul>
                                 </div>
 
@@ -142,7 +157,7 @@
                         </li>
                     @else
                         <li>
-                            <a href="#" class="nav-link text-white">
+                            <a href="/login" class="nav-link text-white">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="bi d-block mx-auto mb-1" width="24"
                                     height="24" fill="currentColor" class="bi bi-box-arrow-in-right"
                                     viewBox="0 0 16 16">

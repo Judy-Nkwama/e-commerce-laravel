@@ -40,8 +40,16 @@ Route::get("/checkout", function () {
     return view("checkout");
 });
 
+//login routes
 Route::get("/signup", [UserController::class, "index"]);
-Route::post("/create-user", [UserController::class, "store"]);
+Route::post("/signup", [UserController::class, "store"]);
+
+//login routes
+Route::get("/login", [UserController::class, "login"]);
+Route::post("/login", [UserController::class, "auth"]);
+
+// logout
+Route::post("/logout", [UserController::class, "logout"]);
 
 
 
