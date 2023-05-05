@@ -17,3 +17,17 @@
 .card-title {
     height: 40px;
 }
+
+.btn-danger-ligth {
+    background: #dc35462f;
+    color: #dc3545;
+}
+
+.btn-danger-ligth:hover {
+    background: #dc3545;
+    color: white;
+}
+
+.product-card:hover {
+    border-color: #dc3545;
+}

@@ -52,9 +52,11 @@ Route::post("/login", [UserController::class, "auth"]);
 Route::post("/logout", [UserController::class, "logout"]);
 
 
-
 //Admin ------------------------
 
 Route::get("/dashboard", function () {
-    return view("dashboard");
+    if(auth()->user()->is_admin ?? false){
+        return view("dashboard");
+    }
+    return redirect("/");
 });

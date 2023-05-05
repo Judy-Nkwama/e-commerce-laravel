@@ -21,6 +21,15 @@ class Products extends Model
                 ->orWhere("description", "like", "%" . request("s") . "%")
                 ->orWhere("tags_string", "like", "%" . request("s") . "%");
         }
+
+        if (($filters["tags_string"] ?? false) && ($filters["product_id"] ?? false)) {
+            $tags = explode(",", $filters["tags_string"]);
+            $query->where(function ($query) use ($tags) {
+                foreach ($tags as $tag) {
+                    $query->orWhereRaw("FIND_IN_SET(?, tags_string) > 0", [$tag]);
+                }
+            })->where('id', '<>', $filters["product_id"]);
+        }
     }
 
     public function orders()

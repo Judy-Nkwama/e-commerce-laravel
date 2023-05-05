@@ -227,7 +227,7 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#">
                                 <span data-feather="layers" class="align-text-bottom"></span>
-                                Integrations
+                                Siteye git
                             </a>
                         </li>
                     </ul>
