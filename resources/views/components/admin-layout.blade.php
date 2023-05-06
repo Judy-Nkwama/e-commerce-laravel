@@ -178,7 +178,7 @@
         <div class="row">
 
             <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
-                <div class="position-sticky pt-3 sidebar-sticky d-flex flex-column justify-content-between">
+                <div class="position-sticky pt-3 sidebar-sticky">
                     <ul class="nav flex-column">
 
                         <li class="nav-item">
@@ -246,7 +246,7 @@
                     </ul>
 
                     {{-- Dropdown at the bottom --}}
-                    <div class="dropdown py-3 border-top">
+                    <div class="dropdown py-3 ps-3 fixed-bottom left-0" style="width: 200px;">
                         <a href="#"
                             class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle"
                             data-bs-toggle="dropdown" aria-expanded="false">
@@ -261,7 +261,10 @@
                                         d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
                                 </svg>
                             @endif
-                            <strong class="ms-2">Judy Nkwama</strong>
+                            <div class="mx-2">
+                                <strong class="">{{ auth()->user()->firstname }} {{ auth()->user()->lastname }}</strong>
+                                <br><span class="text-muted">Admin{{ auth()->user()->id }}</span>
+                            </div>
                         </a>
                         <ul class="dropdown-menu text-small shadow">
                             <li>
@@ -320,11 +323,12 @@
                 </div>
             </nav>
 
-            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center h2 py-3 mb-5 border-bottom">
-                    {{$title}}
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 mb-5 pb-5">
+                <div
+                    class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center h2 py-3 mb-5 border-bottom">
+                    {{ $title }}
                 </div>
-                {{$slot}}
+                {{ $slot }}
             </main>
         </div>
 

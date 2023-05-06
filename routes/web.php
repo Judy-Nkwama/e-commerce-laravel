@@ -33,6 +33,7 @@ Route::get("/", function () {
 });
 
 Route::get("/products", [ProductController::class, "index"]);
+Route::post("/products", [ProductController::class, "create"]);
 
 //One product 
 Route::get("/products/{id}", [ProductController::class, "show"]);

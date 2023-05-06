@@ -25,11 +25,14 @@ class AdminController extends Controller
         );
     }
 
-    // create product
     public static function add_product()
     {
         if (!(auth()->user()->is_admin ?? false)) return redirect("/");
-        return view("admin.new-product");
+        return view(
+            "admin.new-product",[
+                "products" => Products::latest()->get()
+            ]
+        );
     }
 
     //Show orders
