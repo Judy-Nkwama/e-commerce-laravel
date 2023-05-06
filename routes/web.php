@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
 use App\Models\Products;
@@ -53,10 +54,10 @@ Route::post("/logout", [UserController::class, "logout"]);
 
 
 //Admin ------------------------
+Route::get("/dashboard", [AdminController::class, "index"]);
+Route::get("/dashboard/products", [AdminController::class, "show_products"]);
+Route::get("/dashboard/products/new", [AdminController::class, "add_product"]);
+Route::get("/dashboard/orders", [AdminController::class, "show_orders"]);
+Route::get("/dashboard/users", [AdminController::class, "show_users"]);
+Route::get("/dashboard/earnings", [AdminController::class, "show_earnings"]);
 
-Route::get("/dashboard", function () {
-    if(auth()->user()->is_admin ?? false){
-        return view("dashboard");
-    }
-    return redirect("/");
-});

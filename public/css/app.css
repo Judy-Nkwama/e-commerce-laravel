@@ -6,7 +6,7 @@
     height: 150px;
 }
 
-.fs-7{
+.fs-7 {
     font-size: 12px;
 }
 
@@ -18,8 +18,17 @@
     height: 40px;
 }
 
+table td {
+    vertical-align: middle;
+}
+
 .btn-danger-ligth {
     background: #dc35462f;
+    color: #dc3545;
+}
+
+.bg-danger-ligth {
+    background: #dc35461f;
     color: #dc3545;
 }
 
@@ -30,4 +39,17 @@
 
 .product-card:hover {
     border-color: #dc3545;
+}
+
+.adm-prod-sm-img-wrapper {
+    width: 60px;
+    height: 60px;
+}
+
+.limit-lines-3 {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
 }

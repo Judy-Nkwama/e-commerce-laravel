@@ -8,6 +8,7 @@
     <meta name="author" content="Judy Nkwama">
 
     <link rel="icon" type="image/svg+xml" href="{{ asset('images/bag-fill.svg') }}">
+    
     {{-- styles --}}
     <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/carousel/">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
