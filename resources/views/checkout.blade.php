@@ -27,39 +27,37 @@
                                 $product = $item->product()->first();
                             @endphp
 
-                            <div>
-                                <li class="d-flex justify-content-between flex-nowrap p-2">
-                                    <div class="d-flex flex-grow-1">
-                                        <div class="adm-prod-sm-img-wrapper rounded shadow-sm border overflow-hidden">
-                                            <img src="{{ asset("storage/$product->bg_image_link") }}" alt=""
-                                                class="img-fluid w-100 h-100 object-fit-cover">
-                                        </div>
-                                        <div class="d-flex flex-column justify-content-center text-secondary px-3">
-                                            <span class="text-nowrap pe-1 overflow-hidden"
-                                                style="max-width: 150px; text-overflow: ellipsis;">{{ $product->title }}</span>
-                                            <span class="fw-bold">{{ $product->price }}₺</span>
-                                        </div>
+                            <li class="d-flex justify-content-between flex-nowrap border-bottom p-2">
+                                <a href="products/{{ $product->id }}" class="d-flex flex-grow-1 text-decoration-none">
+                                    <div class="adm-prod-sm-img-wrapper rounded shadow-sm border overflow-hidden">
+                                        <img src="{{ asset("storage/$product->bg_image_link") }}" alt=""
+                                            class="img-fluid w-100 h-100 object-fit-cover">
                                     </div>
-                                    <div class="d-flex flex-grow-0 align-items-center ">
-                                        <div class="btn-group btn-group-sm me-2 text-danger" role="group"
-                                            aria-label="Basic outlined">
-                                            <button type="button" class="btn btn-sm btn-outline-danger px-2">-</button>
-                                            <div
-                                                class="d-flex align-items-center border-top border-bottom border-danger w-100 px-3">
-                                                {{ $item->number }}
-                                            </div>
-                                            <button type="button" class="btn btn-sm btn-outline-danger px-2">+</button>
-                                        </div>
-                                        <form method="POST" action="/sepet">
-                                            @csrf
-                                            <input type="hidden" name="product_id" value="{{ $product->id }}" />
-                                            <button type="button" class="btn btn-sm btn-danger px-3">x</button>
-                                        </form>
+                                    <div class="d-flex flex-column justify-content-center text-secondary px-3">
+                                        <span class="text-nowrap pe-1 overflow-hidden"
+                                            style="max-width: 150px; text-overflow: ellipsis;">{{ $product->title }}</span>
+                                        <span class="fw-bold">{{ $product->price }}₺</span>
                                     </div>
-                                </li>
-                            </div>
+                                </a>
+                                <div class="d-flex flex-grow-0 align-items-center ">
+                                    <div class="btn-group btn-group-sm me-2 text-danger border border-danger overflow-hidden rounded" role="group"
+                                        aria-label="Basic outlined">
+                                        <x-post-btn method="PUT" action="/sepet/{{ $item->id }}" value="decrease" class="btn btn-sm btn-outline-danger border-0 border-danger border-end rounded-0 px-2" title="-"/>
+                                        <div
+                                            class="d-flex align-items-center w-100 px-3">
+                                            {{ $item->number }}
+                                        </div>
+                                        <x-post-btn method="PUT" action="/sepet/{{ $item->id }}" value="increase" class="btn btn-sm btn-outline-danger border-0 border-danger border-start rounded-0 px-2" title="+"/>
+                                    </div>
+                                    <form method="POST" action="/sepet">
+                                        @csrf
+                                        <input type="hidden" name="product_id" value="{{ $product->id }}" />
+                                        <button type="button" class="btn btn-sm btn-danger px-3">x</button>
+                                    </form>
+                                </div>
+                            </li>
                         @endforeach
-                        <li class="list-group-item d-flex justify-content-between border-0 border-top ">
+                        <li class="list-group-item d-flex justify-content-between border-0">
                             <span>Toplam (Turk Lirası)</span>
                             <strong>₺{{ $toplam }}</strong>
                         </li>

@@ -1,9 +1,12 @@
 @php
-    $sepet_items = auth()
-        ->user()
-        ->sepet()
-        ->get();
-    $nbr_of_items = count($sepet_items);
+    $nbr_of_items = 0;
+    if (auth()->user()) {
+        $sepet_items = auth()
+            ->user()
+            ->sepet()
+            ->get();
+        $nbr_of_items = count($sepet_items);
+    }
 @endphp
 <div class="dropdown text-white">
     <a href="#" class="nav-link d-flex flex-column align-items-center text-white text-decoration-none"

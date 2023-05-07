@@ -49,7 +49,7 @@
 
                 <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
                     <li>
-                        <a href="#" class="nav-link text-white">
+                        <a href="/" class="nav-link text-white">
                             <svg class="bi d-block mx-auto mb-1" width="24" height="24">
                                 <use xlink:href="#home" />
                             </svg>
@@ -72,7 +72,7 @@
 
                     @auth
                         <li>
-                            <a href="#" class="nav-link text-white">
+                            <a href="/orders" class="nav-link text-white">
                                 <svg class="bi d-block mx-auto mb-1" width="24" height="24">
                                     <use xlink:href="#table" />
                                 </svg>
@@ -82,7 +82,7 @@
                     @endauth
 
                     <li>
-                        <a href="#" class="nav-link text-white">
+                        <a href="/products" class="nav-link text-white">
                             <svg class="bi d-block mx-auto mb-1" width="24" height="24">
                                 <use xlink:href="#grid" />
                             </svg>
@@ -95,7 +95,7 @@
 
                     @auth
                         <li class="p-2">
-                            <a href="#" class="text-white">
+                            <div class="text-white">
                                 <div class="dropdown">
                                     <a href="#" class="d-flex align-items-center text-white text-decoration-none"
                                         data-bs-toggle="dropdown" aria-expanded="false">
@@ -164,9 +164,8 @@
                                         </li>
                                     </ul>
                                 </div>
-
                                 <span>{{ auth()->user()->firstname }}</span>
-                            </a>
+                            </div>
                         </li>
                     @else
                         <li>

@@ -1,16 +1,19 @@
 @props(['product'])
 
 @php
-    $cart_items = auth()
-        ->user()
-        ->sepet()
-        ->get();
-    $is_in_the_cart = false; 
-    $len = count($cart_items);
-    for ($i=0; $i < $len; $i++) { 
-        if($cart_items[$i]->product_id == $product->id){
-            $is_in_the_cart = true;
-            break;
+    $is_in_the_cart = false;
+    if (auth()->user()) {
+        dd($product);
+        $cart_items = auth()
+            ->user()
+            ->sepet()
+            ->get();
+        $len = count($cart_items);
+        for ($i = 0; $i < $len; $i++) {
+            if ($cart_items[$i]->product_id == $product->id) {
+                $is_in_the_cart = true;
+                break;
+            }
         }
     }
 @endphp
@@ -32,7 +35,7 @@
                 @csrf
                 <input type="hidden" name="product_id" value="{{ $product->id }}" />
                 <button type="submit" onclick="(e) => e.stopPropagation();"
-                    class="btn btn-sm w-100 btn-{{ $is_in_the_cart ? "danger" : "success"}}-ligth rounded-3 my-2">
+                    class="btn btn-sm w-100 btn-{{ $is_in_the_cart ? 'danger' : 'success' }}-ligth rounded-3 my-2">
                     @if (!$is_in_the_cart)
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             class="bi bi-cart-plus" viewBox="0 0 16 16">
