@@ -47,13 +47,11 @@ return new class extends Migration
             $table->integer('quantity');
             $table->boolean('is_active')->default(true);
             $table->string("tags_string");
-            //$table->dateTime('created_at')->default(now());
-            //$table->text('description');
             $table->timestamps();
         });
 
         // sepet
-        Schema::create('sepet', function (Blueprint $table) {
+        Schema::create('sepets', function (Blueprint $table) {
             $table->id()->unique();
             $table->foreignId("product_id");
             $table->foreignId("user_id");
@@ -70,7 +68,7 @@ return new class extends Migration
     public function down(): void
     {
         //
-        Schema::dropIfExists('sepet');
+        Schema::dropIfExists('sepets');
         
         //
         Schema::dropIfExists('products');

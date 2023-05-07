@@ -13,7 +13,7 @@
 
             <h5 class="fw-semibold">{{ $product->price }}₺</h5>
 
-            <form method="POST" action="/sepet">
+            <form action="/sepet">
                 <input type="hidden" name="product_id" value="{{ $product->id }}" />
                 <button type="submit" onclick="(e) => e.stopPropagation();"  class="btn btn-sm w-100 btn-danger-ligth rounded-3 my-2">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"

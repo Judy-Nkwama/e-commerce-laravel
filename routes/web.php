@@ -63,4 +63,4 @@ Route::get("/dashboard/users", [AdminController::class, "show_users"]);
 Route::get("/dashboard/earnings", [AdminController::class, "show_earnings"]);
 
 // sepet
-Route::post("/sepet", [SepetController::class, "add_to"]);
+Route::get("/sepet", [SepetController::class, "add_to"]);

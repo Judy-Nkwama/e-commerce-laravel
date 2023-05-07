@@ -50,15 +50,3 @@ class User extends Authenticatable
         return $this->hasMany(Orders::class);
     }
 }
-
-// class Admin extends Model
-// {
-//     protected $fillable = [
-//         'name', 'email', 'password'
-//     ];
-
-//     public function products()
-//     {
-//         return $this->hasMany(Products::class);
-//     }
-// }
