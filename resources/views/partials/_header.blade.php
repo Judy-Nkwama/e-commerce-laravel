@@ -89,10 +89,6 @@
                             <span>Ürünler</span>
                         </a>
                     </li>
-
-
-
-
                     <li>
                         @include('partials._sepet')
                     </li>

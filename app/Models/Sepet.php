@@ -13,13 +13,20 @@ class Sepet extends Model
         'product_id', 'user_id'
     ];
 
-    public function user()
+    public function scopeFilter($query, array $filters)
     {
-        return $this->belongsTo(User::class);
+        if ($filters["user_id"] ?? false) {
+            $query->where("user_id", $filters["user_id"]);
+        }
     }
 
-    public function products()
+    public function user()
     {
-        return $this->belongsToMany(Products::class);
+        return $this->belongsTo(User::class, "user_id");
+    }
+
+    public function product()
+    {
+        return $this->belongsTo(Products::class, "product_id");
     }
 }

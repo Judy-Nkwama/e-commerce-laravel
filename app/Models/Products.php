@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Sepet;
 use App\Models\Orders;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -39,5 +40,10 @@ class Products extends Model
     public function orders()
     {
         return $this->belongsToMany(Orders::class);
+    }
+
+    public function sepet()
+    {
+        return $this->belongsToMany(Sepet::class, "product_id");
     }
 }

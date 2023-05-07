@@ -27,14 +27,24 @@ table td {
     color: #dc3545;
 }
 
-.bg-danger-ligth {
-    background: #dc35461f;
-    color: #dc3545;
-}
-
 .btn-danger-ligth:hover {
     background: #dc3545;
     color: white;
+}
+
+.btn-success-ligth {
+    color: #f8fffb;
+    background: #35dc8b;
+}
+
+.btn-success-ligth:hover {
+    background: #35dc8b;
+    color: #f8fffb;
+}
+
+.bg-danger-ligth {
+    background: #dc35461f;
+    color: #dc3545;
 }
 
 .product-card:hover {

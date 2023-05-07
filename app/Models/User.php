@@ -49,4 +49,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Orders::class);
     }
+
+    public function sepet()
+    {
+        return $this->hasMany(Sepet::class, "user_id");
+    }
 }

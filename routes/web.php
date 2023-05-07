@@ -7,24 +7,7 @@ use App\Http\Controllers\UserController;
 use App\Models\Products;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
-
-
 //User -----------------------------------
-
-// all home page
-Route::get('/', function () {
-    return view('welcome');
-});
 
 // all products list is home page and products list page at the same time
 Route::get("/", function () {
@@ -63,4 +46,4 @@ Route::get("/dashboard/users", [AdminController::class, "show_users"]);
 Route::get("/dashboard/earnings", [AdminController::class, "show_earnings"]);
 
 // sepet
-Route::get("/sepet", [SepetController::class, "add_to"]);
+Route::post("/sepet", [SepetController::class, "add_to"]);
