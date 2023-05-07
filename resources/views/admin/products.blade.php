@@ -28,8 +28,7 @@
                         <td class="fw-bold">#üru{{ $product->id }}</td>
                         <td class="px-3">
                             <div class="adm-prod-sm-img-wrapper rounded shadow-sm border overflow-hidden">
-                                <img src="{{ $product->bg_image_link }}" alt="{{ $product->title }}"
-                                    class="img-fluid w-100 h-100 object-fit-cover">
+                                <img src="{{ asset("storage/$product->bg_image_link") }}" alt="{{ $product->title }}" class="img-fluid w-100 h-100 object-fit-cover">
                             </div>
                         </td>
                         <td class="py-3">

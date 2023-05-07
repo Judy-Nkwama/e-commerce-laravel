@@ -4,7 +4,7 @@
             <div class="row">
                 <div class="col-md-6 pe-5">
                     <div class="rounded-4 shadow h-100 border overflow-hidden">
-                        <img src="{{ $product->bg_image_link }}" alt="{{ $product->title }}" class="img-fluid w-100 h-100 object-fit-cover">
+                        <img src="{{ asset("storage/$product->bg_image_link") }}" alt="{{ $product->title }}" class="img-fluid w-100 h-100 object-fit-cover">
                     </div>
                 </div>
                 <div class="col-md-6 text-secondary">

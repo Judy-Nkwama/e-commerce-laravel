@@ -1,6 +1,6 @@
 <x-admin-layout title="Yeni Ürün Ekle">
     <div class="container">
-        <form method="POST" action="/products" class="needs-validation text-secondary">
+        <form method="POST" action="/products" enctype="multipart/form-data" class="needs-validation text-secondary">
             @csrf
             <div class="row g-3">
                 <div class="col-sm-12">

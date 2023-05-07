@@ -4,11 +4,11 @@
     <a href="products/{{ $product->id }}"
         class="card link-secondary rounded-4 shadow-sm overflow-hidden product-card text-decoration-none">
         <div class="card-img-wrapper overflow-hidden w-100">
-            <img class="img-fluid object-fit-cover" src="{{ $product->bg_image_link }}" />
+            <img class="img-fluid object-fit-cover" src="{{ asset("storage/$product->bg_image_link") }}" />
         </div>
 
         <div class="card-body p-2 bg-white">
-            <div class="fw-bold lh-sm card-title overflow-hidden">{{ $product->title }} knasfl</div class="fw-bold">
+            <div class="fw-bold lh-sm card-title overflow-hidden">{{ $product->title }}</div class="fw-bold">
             <p class="card-text fs-7 lh-sm card-description overflow-hidden mb-1">{{ $product->description }}</p>
 
             <h5 class="fw-semibold">{{ $product->price }}₺</h5>
@@ -27,3 +27,5 @@
         </div>
     </a>
 </div>
+
+  

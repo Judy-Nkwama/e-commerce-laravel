@@ -47,14 +47,11 @@ class ProductController extends Controller
         );
 
         if ($request->hasFile('bg_image_link')) {
-            dd("has file");
             $offerData['bg_image_link'] = $request->file('bg_image_link')->store('products_image', "public");
         }
 
-        dd($request->file('bg_image_link'));
-
-        //Products::create($offerData);
-        //return redirect("/dashboard/products");
+        Products::create($offerData);
+        return redirect("/dashboard/products");
         
     }
 }
