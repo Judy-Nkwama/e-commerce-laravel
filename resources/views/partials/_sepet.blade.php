@@ -28,7 +28,7 @@
                 @endphp
 
                 <li>
-                    <div class="d-flex flex-nowrap p-2">
+                    <div class="d-flex align-items-center flex-nowrap p-2">
                         <div class="adm-prod-sm-img-wrapper rounded shadow-sm border overflow-hidden">
                             <img src="{{ asset("storage/$product->bg_image_link") }}" alt=""
                                 class="img-fluid w-100 h-100 object-fit-cover">
@@ -38,18 +38,11 @@
                                 style="max-width: 150px; text-overflow: ellipsis;">{{ $product->title }}</span>
                             <span class="fw-bold">{{ $product->price }}₺</span>
                         </div>
-                        <div class="d-flex px-3 align-items-center">
-                            <div class="btn-group btn-group-sm me-md-4 text-danger" role="group"
-                                aria-label="Basic outlined">
-                                <button type="button" class="btn btn-sm btn-outline-danger px-2">-</button>
-                                <div
-                                    class="d-flex align-items-center border-top border-bottom border-danger w-100 px-3">
-                                    1
-                                </div>
-                                <button type="button" class="btn btn-sm btn-outline-danger px-2">+</button>
-                            </div>
+                        <form method="POST" action="/sepet">
+                            @csrf
+                            <input type="hidden" name="product_id" value="{{ $product->id }}" />
                             <button type="button" class="btn btn-sm btn-danger px-3">x</button>
-                        </div>
+                        </form>
                     </div>
                 </li>
             @endforeach
