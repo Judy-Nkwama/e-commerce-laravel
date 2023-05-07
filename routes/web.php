@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\SepetController;
 use App\Http\Controllers\UserController;
 use App\Models\Products;
 use Illuminate\Support\Facades\Route;
@@ -53,7 +54,6 @@ Route::post("/login", [UserController::class, "auth"]);
 // logout
 Route::post("/logout", [UserController::class, "logout"]);
 
-
 //Admin ------------------------
 Route::get("/dashboard", [AdminController::class, "index"]);
 Route::get("/dashboard/products", [AdminController::class, "show_products"]);
@@ -62,3 +62,5 @@ Route::get("/dashboard/orders", [AdminController::class, "show_orders"]);
 Route::get("/dashboard/users", [AdminController::class, "show_users"]);
 Route::get("/dashboard/earnings", [AdminController::class, "show_earnings"]);
 
+// sepet
+Route::post("/sepet", [SepetController::class, "add_to"]);

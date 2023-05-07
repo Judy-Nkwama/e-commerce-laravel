@@ -17,12 +17,6 @@
                     <form action="{{-- route('cart.add', $product->id) --}}" method="POST">
                         @csrf
                         <div class="d-flex">
-                            <div class="btn-group me-md-4" role="group" aria-label="Basic outlined">
-                                <button type="button" class="btn btn-outline-danger px-3">-</button>
-                                <div class="d-flex align-items-center border border-danger w-100 px-4"><span>1</span>
-                                </div>
-                                <button type="button" class="btn btn-outline-danger px-3">+</button>
-                            </div>
                             <button type="submit" class="btn btn-danger flex-grow-1">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                     fill="currentColor" class="bi bi-cart-plus" viewBox="0 0 16 16">

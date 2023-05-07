@@ -4,7 +4,9 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
+use \App\Models\User;
 use App\Models\Products;
+use App\Models\UserAddress;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -16,26 +18,34 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        User::create([
+            'firstname' => 'Judy',
+            'lastname' => 'Nkwama',
+            'is_admin' => 1,
+            'password' => bcrypt("1234"),
+            'email' => 'nkwamajudy@gmail.com',
+        ]);
 
-        Products::create([
-            "title" => "Lorem Ipsum",
-            "description" => "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",
-            "bg_image_link" => "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRcDyEIA6s7mIc_KbyggdhroRgeMXrIRlWRw&usqp=CAU",
-            "tags_string" => "Çocuk,Kadın",
-            "price" => 400,
-            "quantity" => 10
+        $noe = User::create([
+            'firstname' => 'Aklıme',
+            'lastname' => 'Şahın',
+            'password' => bcrypt("1234"),
+            'email' => 'aklime@gmail.com',
+        ]);
+        
+        UserAddress::create([
+            "user_id" => $noe["id"],
+            "address" => "Milano 32 naploi",
+            "city" => "Kocaeli",
+            "zip" => "41000"
         ]);
 
         Products::create([
-            "title" => "Lorem Apsham",
-            "description" => "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",
-            "bg_image_link" => "https://loremipsum.io/assets/images/lorem-ipsum-magazine-layout.jpg",
-            "tags_string" => "Erkek,aksesuar",
-            "price" => 400,
+            "title" => "Ya maddo",
+            "description" => "Introducing our latest addition to the collection, the African traditional t-shirt. Made with the finest African fabric and tailored to perfection, this t-shirt is a must-have for anyone who loves traditional African fashion. With its vibrant colors and intricate patterns, this t-shirt is perfect for any occasion, whether you're dressing up or down. The lightweight fabric and comfortable fit make it ideal for hot summer days, and the breathable material ensures that you stay cool and comfortable all day long. Order yours today and step out in style with this beautiful African traditional t-shirt.",
+            "bg_image_link" => "products_image/9jyxUPIvSMuIOOgqaNvGp0HQtzhxiiiqZrBZzJLj.jpg",
+            "tags_string" => "Erkek,Kadın",
+            "price" => 250,
             "quantity" => 10
         ]);
     }
