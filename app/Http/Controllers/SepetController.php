@@ -10,26 +10,30 @@ class SepetController extends Controller
 {
     public static function add_to(Request $request)
     {
+        if (auth()->user() !== null) {
+            
+            $itemData = $request->validate(["product_id" => "required|integer"]);
+            $itemData["user_id"] = auth()->user()->id;
+            $itemData["product_id"] = $itemData["product_id"] * 1;
 
-        $itemData = $request->validate(["product_id" => "required|integer"]);
-        $itemData["user_id"] = auth()->user()->id;
-        $itemData["product_id"] = $itemData["product_id"] * 1;
-
-        $item = null;
-        $cart_items = auth()->user()->sepet()->get();
-        $len = count($cart_items);
-        for ($i = 0; $i < $len; $i++) {
-            if ($cart_items[$i]->product_id == $itemData["product_id"]) {
-                $item = $cart_items[$i];
-                break;
+            $item = null;
+            $cart_items = auth()->user()->sepet()->get();
+            $len = count($cart_items);
+            for ($i = 0; $i < $len; $i++) {
+                if ($cart_items[$i]->product_id == $itemData["product_id"]) {
+                    $item = $cart_items[$i];
+                    break;
+                }
             }
-        }
 
-        if($item){
-            $item->delete();
-        }else{
-            Sepet::create($itemData);
+            if ($item) {
+                $item->delete();
+            } else {
+                Sepet::create($itemData);
+            }
+            return back();
+        
         }
-        return back();
+        return redirect("/login");
     }
 }

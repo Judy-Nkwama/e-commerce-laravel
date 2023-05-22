@@ -3,7 +3,7 @@
 @php
     $is_in_the_cart = false;
     if (auth()->user()) {
-        dd($product);
+        //dd($product);
         $cart_items = auth()
             ->user()
             ->sepet()

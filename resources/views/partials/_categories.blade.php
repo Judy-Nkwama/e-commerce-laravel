@@ -2,35 +2,35 @@
     $categories = [
         [
             'title' => 'Kadın',
-            'image' => 'https://picsum.photos/200/300',
+            'image' => '7.png',
         ],
         [
             'title' => 'Erkek',
-            'image' => 'https://picsum.photos/200/300',
+            'image' => '5.png',
         ],
         [
             'title' => 'Çocuk',
-            'image' => 'https://picsum.photos/200/300',
+            'image' => '6.png',
         ],
         [
             'title' => 'Bebek',
-            'image' => 'https://picsum.photos/200/300',
+            'image' => '6.png',
         ],
         [
             'title' => 'Aksesuar',
-            'image' => 'https://picsum.photos/200/300',
+            'image' => '2.png',
         ],
         [
             'title' => 'Popüler',
-            'image' => 'https://picsum.photos/200/300',
+            'image' => '1.png',
         ],
         [
             'title' => 'Liputa',
-            'image' => 'https://picsum.photos/200/300',
+            'image' => '8.png',
         ],
         [
             'title' => 'Bazön',
-            'image' => 'https://picsum.photos/200/300',
+            'image' => '4.png',
         ],
     ];
 @endphp
