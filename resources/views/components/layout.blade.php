@@ -216,7 +216,7 @@
 
         </div>
 
-        <p class="text-center">&copy; 191307093 Judy Ndotoni Nkwama</p>
+        <p class="text-center">&copy;Judy-Nkwama</p>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
