@@ -18,7 +18,7 @@
     }
 @endphp
 
-<div class="col mx-2">
+<div class="col mx-2 my-4">
     <a href="products/{{ $product->id }}"
         class="card link-secondary rounded-4 shadow-sm overflow-hidden product-card text-decoration-none">
         <div class="card-img-wrapper overflow-hidden w-100">
